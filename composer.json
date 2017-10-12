@@ -8,7 +8,7 @@
     }
   ],
   "scripts": {
-    "dev": "aerys -d -c app.php"
+    "dev": "aerys -d -c back/app.php"
   },
   "require": {
     "roave/security-advisories": "dev-master",
@@ -16,5 +16,10 @@
   },
   "config": {
     "process-timeout": 0
+  },
+  "autoload": {
+    "psr-4": {
+      "Pupper\\Pupper\\": "./back/src/Pupper"
+    }
   }
 }

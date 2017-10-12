@@ -8,7 +8,7 @@
     }
   ],
   "scripts": {
-    "dev": "aerys -d -c back/app.php"
+    "dev": "aerys -d -c src/app.php"
   },
   "require": {
     "roave/security-advisories": "dev-master",
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Pupper\\Pupper\\": "./back/src/Pupper"
+      "Pupper\\Pupper\\": "src/Pupper"
     }
   }
 }

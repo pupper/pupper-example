@@ -12,7 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.setPublicPath('./');
-mix.react('front/src/app.js', 'front/dist/');
+mix.react('src/app.js', 'dist/');
    // .sass('src/app.scss', 'dist/')
    //  .setPublicPath('dist');
 

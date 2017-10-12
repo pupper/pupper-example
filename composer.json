@@ -1,0 +1,13 @@
+{
+  "name": "bouiboui/pupper",
+  "license": "Unlicense",
+  "authors": [
+    {
+      "name": "bouiboui",
+      "email": "dev@cod3.net"
+    }
+  ],
+  "require": {
+    "amphp/aerys": "^0.6.0"
+  }
+}

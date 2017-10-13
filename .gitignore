@@ -1,5 +1,4 @@
 /vendor/
 /node_modules/
 /mix-manifest.json
-!/dist/.gitkeep
 /dist/

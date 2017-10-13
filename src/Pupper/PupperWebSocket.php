@@ -10,6 +10,8 @@ class PupperWebSocket implements Websocket
 {
     /** @var Websocket\Endpoint $endpoint */
     public $endpoint;
+    /** @var array $listeners */
+    private $listeners = [];
 
     /**
      * Invoked when starting the server.
@@ -81,34 +83,12 @@ class PupperWebSocket implements Websocket
         // mentioned earlier.
         $body = yield $msg;
 
-        $json = json_decode($body, true);
-        $event = static::makeEvent('custom', 'From PHP: ' . $body);
-        if (array_key_exists('event', $json)) {
-            $value = $json['value'];
-            switch ($json['event']) {
-                case 'custom':
-                    $event = static::makeEvent('custom', 'From PHP: ' . $body);
-                    break;
-                case 'todo': {
-                    sleep(2);
-                    $event = static::makeEvent('todo', md5($value));
-                }
-            }
-        }
-        $this->endpoint->send($event, $clientId); // null broadcasts to all connected clients
-    }
+        $reactEvent = ReactEvent::parse($body);
 
-    /**
-     * @param string $name Event name
-     * @param mixed $value
-     * @return string
-     */
-    private static function makeEvent($name, $value): string
-    {
-        return json_encode([
-            'event' => $name,
-            'value' => $value
-        ]);
+        foreach ($this->listeners[$reactEvent->getName()] as $callback) {
+            $this->endpoint->send($callback($reactEvent), $clientId);
+        }
+
     }
 
     /**
@@ -150,5 +130,19 @@ class PupperWebSocket implements Websocket
     public function onStop()
     {
         // TODO: Implement onStop() method.
+    }
+
+    /**
+     * @param string $eventName
+     * @param callable $callback
+     * @return PupperWebSocket
+     */
+    public function addListener(string $eventName, callable $callback): PupperWebSocket
+    {
+        if (!array_key_exists($eventName, $this->listeners)) {
+            $this->listeners[$eventName] = [];
+        }
+        $this->listeners[$eventName][] = $callback;
+        return $this;
     }
 }

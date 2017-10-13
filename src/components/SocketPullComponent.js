@@ -25,7 +25,7 @@ class SocketPullComponent extends Component {
     }
 
     componentWillUnmount() {
-        this.socket.removeEventListener(this.onMessage);
+        this.socket.removeEventListener('message', this.onMessage);
         this.socket = null;
     }
 

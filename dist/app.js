@@ -507,86 +507,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(29);
 
 
 
 
-console.log('hello react !!!');
-
-var App = function (_Component) {
-    _inherits(App, _Component);
-
-    function App() {
-        _classCallCheck(this, App);
-
-        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
-
-        _this.state = { toSend: 'nothing' };
-        _this.onMessage = _this.onMessage.bind(_this);
-        _this.onSubmit = _this.onSubmit.bind(_this);
-        return _this;
-    }
-
-    _createClass(App, [{
-        key: 'componentWillMount',
-        value: function componentWillMount() {
-            var _this2 = this;
-
-            this.socket = new WebSocket('ws://127.0.0.1:1337/ws');
-            this.socket.addEventListener('message', this.onMessage);
-
-            // DEBUG
-            this.socket.addEventListener('open', function () {
-                _this2.socket.send('hello world');
-            });
-        }
-    }, {
-        key: 'onMessage',
-        value: function onMessage(e) {
-            console.log("message: " + e.data);
-        }
-    }, {
-        key: 'componentWillUnmount',
-        value: function componentWillUnmount() {
-            this.socket.removeEventListener(this.onMessage);
-            this.socket = null;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this3 = this;
-
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: function onChange(e) {
-                        return _this3.setState({ toSend: e.target.value });
-                    } }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { onClick: this.onSubmit },
-                    'Submit'
-                )
-            );
-        }
-    }, {
-        key: 'onSubmit',
-        value: function onSubmit() {
-            this.socket.send(this.state.toSend);
-        }
-    }]);
-
-    return App;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null), document.querySelector('#app'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], null), document.querySelector('#app'));
 
 /***/ }),
 /* 11 */
@@ -20689,6 +20615,181 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Ticker = function (_Component) {
+    _inherits(Ticker, _Component);
+
+    function Ticker() {
+        _classCallCheck(this, Ticker);
+
+        var _this = _possibleConstructorReturn(this, (Ticker.__proto__ || Object.getPrototypeOf(Ticker)).call(this));
+
+        _this.state = { value: null };
+        _this.onMessage = _this.onMessage.bind(_this);
+        _this.onData = _this.onData.bind(_this);
+        return _this;
+    }
+
+    _createClass(Ticker, [{
+        key: 'onData',
+        value: function onData(value) {
+            this.setState({ value: value });
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.socket = new WebSocket('ws://127.0.0.1:1337/ws');
+            this.socket.addEventListener('message', this.onMessage);
+        }
+    }, {
+        key: 'onMessage',
+        value: function onMessage(e) {
+            try {
+                var data = JSON.parse(e.data);
+                if (data.event && data.event === this.props.listensTo) {
+                    this.onData(data.value);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.socket.removeEventListener(this.onMessage);
+            this.socket = null;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'strong',
+                null,
+                this.state.value
+            );
+        }
+    }]);
+
+    return Ticker;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var ListenerComponent = function (_Component2) {
+    _inherits(ListenerComponent, _Component2);
+
+    function ListenerComponent() {
+        _classCallCheck(this, ListenerComponent);
+
+        var _this2 = _possibleConstructorReturn(this, (ListenerComponent.__proto__ || Object.getPrototypeOf(ListenerComponent)).call(this));
+
+        _this2.state = {
+            toSend: 'nothing'
+        };
+        _this2.onMessage = _this2.onMessage.bind(_this2);
+        _this2.onSubmit = _this2.onSubmit.bind(_this2);
+        _this2.onCustom = _this2.onCustom.bind(_this2);
+        return _this2;
+    }
+
+    _createClass(ListenerComponent, [{
+        key: 'onCustom',
+        value: function onCustom(value) {
+            console.log(value);
+        }
+    }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            var _this3 = this;
+
+            this.socket = new WebSocket('ws://127.0.0.1:1337/ws');
+            this.socket.addEventListener('message', this.onMessage);
+
+            // DEBUG
+            this.socket.addEventListener('open', function () {
+                _this3.socket.send('hello world');
+            });
+        }
+    }, {
+        key: 'onMessage',
+        value: function onMessage(e) {
+            try {
+                var data = JSON.parse(e.data);
+                if (data.event) {
+                    switch (data.event) {
+                        case 'custom':
+                            this.onCustom(data.value);
+                            break;
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.socket.removeEventListener(this.onMessage);
+            this.socket = null;
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit() {
+            this.socket.send(this.state.toSend);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Ticker, { listensTo: 'tick' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: function onChange(e) {
+                        return _this4.setState({ toSend: e.target.value });
+                    } }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { onClick: this.onSubmit },
+                    'Submit'
+                )
+            );
+        }
+    }]);
+
+    return ListenerComponent;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+var App = function (_ListenerComponent) {
+    _inherits(App, _ListenerComponent);
+
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    return App;
+}(ListenerComponent);
+
+/* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ })
 /******/ ]);

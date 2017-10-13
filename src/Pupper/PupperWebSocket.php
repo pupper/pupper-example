@@ -5,11 +5,12 @@ namespace Pupper\Pupper;
 use Aerys\Request;
 use Aerys\Response;
 use Aerys\Websocket;
+use Amp\Loop;
 
 class PupperWebSocket implements Websocket
 {
     /** @var Websocket\Endpoint $endpoint */
-    private $endpoint;
+    public $endpoint;
 
     /**
      * Invoked when starting the server.
@@ -63,17 +64,6 @@ class PupperWebSocket implements Websocket
     }
 
     /**
-     * Invoked when the full two-way websocket upgrade completes.
-     *
-     * @param int $clientId A unique (to the current process) identifier for this client
-     * @param mixed $handshakeData The return value from onHandshake() for this client
-     */
-    public function onOpen(int $clientId, $handshakeData)
-    {
-        // TODO: Implement onOpen() method.
-    }
-
-    /**
      * Invoked when data messages arrive from the client.
      *
      * @param int $clientId A unique (to the current process) identifier for this client
@@ -91,7 +81,33 @@ class PupperWebSocket implements Websocket
         // For more information, please read the "Getting Started with Amp" post
         // mentioned earlier.
         $body = yield $msg;
-        $this->endpoint->send('From PHP: ' . $body, $clientId); // null broadcasts to all connected clients
+        $this->endpoint->send(static::makeEvent('custom', 'From PHP: ' . $body), $clientId); // null broadcasts to all connected clients
+    }
+
+    /**
+     * @param string $name Event name
+     * @param mixed $value
+     * @return string
+     */
+    private static function makeEvent($name, $value): string
+    {
+        return json_encode([
+            'event' => $name,
+            'value' => $value
+        ]);
+    }
+
+    /**
+     * Invoked when the full two-way websocket upgrade completes.
+     *
+     * @param int $clientId A unique (to the current process) identifier for this client
+     * @param mixed $handshakeData The return value from onHandshake() for this client
+     */
+    public function onOpen(int $clientId, $handshakeData)
+    {
+        Loop::repeat(500, function () use ($clientId) {
+            $this->endpoint->send(static::makeEvent('tick', microtime(true)), $clientId);
+        });
     }
 
     /**

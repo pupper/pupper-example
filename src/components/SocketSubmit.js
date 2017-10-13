@@ -1,7 +1,9 @@
 'use strict';
 
-import SocketComponent from './SocketComponent'
-import React from 'react/cjs/react.production.min';
+import React from 'react';
+
+import {SocketComponent} from './PupperComponents'
+import ReactEvent from './ReactEvent';
 
 class SocketSubmit extends SocketComponent {
     constructor() {
@@ -10,10 +12,12 @@ class SocketSubmit extends SocketComponent {
     }
 
     onSubmit() {
-        this.socket.send(JSON.stringify({
-            event: this.props.eventKey,
-            value: this.props.toSubmit
-        }));
+        this.socket.send(
+            new ReactEvent()
+                .setName(this.props.eventKey)
+                .setValue(this.props.toSubmit)
+                .build()
+        );
     }
 
     render() {

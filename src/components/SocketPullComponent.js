@@ -1,6 +1,7 @@
 'use strict';
 
-import {Component} from 'react/cjs/react.production.min';
+import {Component} from 'react';
+import ReactEvent from './ReactEvent';
 
 class SocketPullComponent extends Component {
     constructor() {
@@ -15,9 +16,9 @@ class SocketPullComponent extends Component {
 
     onMessage(e) {
         try {
-            const data = JSON.parse(e.data);
-            if (data.event && data.event === this.props.listensTo) {
-                this.onData(data.value);
+            const event = ReactEvent.parse(e.data);
+            if (event.getName() === this.props.listensTo) {
+                this.onData(event.getValue());
             }
         } catch (e) {
             console.error(e);

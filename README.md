@@ -6,6 +6,19 @@ Pupper stands for "PHP Plus React" (PPR -> Pupper). The goal is to make a Framew
 
 It's inspired by the article [Game Development with React and PHP: How Compatible Are They?](https://www.sitepoint.com/game-development-with-reactjs-and-php-how-compatible-are-they/?mkt_tok=eyJpIjoiTUdZek9URTFNR1JrTVRCaCIsInQiOiJxbnB6Z0JVNDBtdFRvSWFMMStkcmhuWGIrMkdDWlhwS1VSMGFGN1hwb0pxTUxcL1VBc015UmxEQ3J3VDBSSkFRNjh2ejVTdEluXC9QcEppT0VXQ3kybkxaMTZJSnExT1BJRjB3TFwvaTEyOWNCQkd4ZlZtcVlEK0hKSlFxKzE1WEhPTCJ9) by Christopher Pitt.
 
+## Usage
+
+This is a work in progress, but if you want to take a peek:
+```bash
+// npm
+npm run front-watch
+npm run back-dev
+
+// Yarn
+yarn front-watch
+yarn back-dev
+```
+
 ## Credits
 
 - [bouiboui][link-author]

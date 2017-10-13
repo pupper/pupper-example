@@ -1,9 +1,14 @@
 <?php
 
-use Pupper\Pupper\PupperApp;
-use Pupper\Pupper\PupperWebSocket;
+use Aerys\Request;
+use Aerys\Response;
 use function Aerys\websocket;
 
 return Aerys\router()
-    ->route('GET', '/', new PupperApp)
-    ->route('GET', '/ws', websocket(new PupperWebSocket));
+    ->route('GET', '/', function (Request $request, Response $response) {
+        $response->write(
+            '<div id="app"></div>' .
+            '<script src="./app.js"></script>'
+        );
+    })
+    ->route('GET', '/ws', websocket(new Pupper\Pupper\PupperWebSocket));

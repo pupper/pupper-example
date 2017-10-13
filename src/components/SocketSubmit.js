@@ -10,7 +10,10 @@ class SocketSubmit extends SocketComponent {
     }
 
     onSubmit() {
-        this.socket.send(this.props.toSubmit)
+        this.socket.send(JSON.stringify({
+            event: this.props.eventKey,
+            value: this.props.toSubmit
+        }));
     }
 
     render() {

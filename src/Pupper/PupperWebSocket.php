@@ -5,7 +5,6 @@ namespace Pupper\Pupper;
 use Aerys\Request;
 use Aerys\Response;
 use Aerys\Websocket;
-use Amp\Loop;
 
 class PupperWebSocket implements Websocket
 {
@@ -81,7 +80,22 @@ class PupperWebSocket implements Websocket
         // For more information, please read the "Getting Started with Amp" post
         // mentioned earlier.
         $body = yield $msg;
-        $this->endpoint->send(static::makeEvent('custom', 'From PHP: ' . $body), $clientId); // null broadcasts to all connected clients
+
+        $json = json_decode($body, true);
+        $event = static::makeEvent('custom', 'From PHP: ' . $body);
+        if (array_key_exists('event', $json)) {
+            $value = $json['value'];
+            switch ($json['event']) {
+                case 'custom':
+                    $event = static::makeEvent('custom', 'From PHP: ' . $body);
+                    break;
+                case 'todo': {
+                    sleep(2);
+                    $event = static::makeEvent('todo', md5($value));
+                }
+            }
+        }
+        $this->endpoint->send($event, $clientId); // null broadcasts to all connected clients
     }
 
     /**
@@ -105,9 +119,7 @@ class PupperWebSocket implements Websocket
      */
     public function onOpen(int $clientId, $handshakeData)
     {
-        Loop::repeat(500, function () use ($clientId) {
-            $this->endpoint->send(static::makeEvent('tick', microtime(true)), $clientId);
-        });
+        // TODO: Implement onOpen() method.
     }
 
     /**

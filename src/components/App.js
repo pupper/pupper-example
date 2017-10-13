@@ -1,27 +1,16 @@
 'use strict';
 
-import React, {Component} from 'react/cjs/react.production.min';
+import React from 'react';
+import {HashRouter, NavLink, Route} from 'react-router-dom';
 
-import SocketLogger from './SocketLogger';
-import SocketPrinter from './SocketPrinter';
-import SocketSubmit from './SocketSubmit';
+import Todo from '../../pages/todo/todo';
+import Main from '../../pages/main/main';
 
-const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
-
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {toSend: 'nothing'};
-    }
-
-    render() {
-        return <div>
-            <strong><SocketPrinter socket={globalSocket} listensTo='tick'/></strong><br/>
-            <strong><SocketLogger socket={globalSocket} listensTo='custom'/></strong><br/>
-            <input onChange={e => this.setState({toSend: e.target.value})}/>
-            <SocketSubmit socket={globalSocket} toSubmit={this.state.toSend}/>
-        </div>
-    }
-}
-
-export default App;
+export default () => <HashRouter>
+    <div>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/todo'>To-do app</NavLink>
+        <Route exact path='/' component={Main}/>
+        <Route exact path='/todo' component={Todo}/>
+    </div>
+</HashRouter>

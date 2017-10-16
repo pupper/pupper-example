@@ -12,10 +12,14 @@ class ReactEvent
     /**
      * @param string $body
      * @return ReactEvent
+     * @throws \RuntimeException
      */
     public static function parse(string $body): ReactEvent
     {
         $json = json_decode($body, true);
+        if (!array_key_exists('name', $json) || !array_key_exists('value', $json)) {
+            throw  new \RuntimeException('name & value expected, got ' . implode(', ', array_keys($json)));
+        }
         return (new self)
             ->setName($json['name'])
             ->setValue($json['value']);
@@ -63,7 +67,7 @@ class ReactEvent
     public function build(): string
     {
         return json_encode([
-            'event' => $this->name,
+            'name' => $this->name,
             'value' => $this->value
         ]);
     }

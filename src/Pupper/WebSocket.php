@@ -4,11 +4,11 @@ namespace Pupper\Pupper;
 
 use Aerys\Request;
 use Aerys\Response;
-use Aerys\Websocket;
+use Aerys\Websocket as AerysWebsocket;
 
-class PupperWebSocket implements Websocket
+class WebSocket implements AerysWebsocket
 {
-    /** @var Websocket\Endpoint $endpoint */
+    /** @var AerysWebsocket\Endpoint $endpoint */
     public $endpoint;
     /** @var array $listeners */
     private $listeners = [];
@@ -29,7 +29,7 @@ class PupperWebSocket implements Websocket
      *
      * @param \Aerys\Websocket\Endpoint $endpoint
      */
-    public function onStart(Websocket\Endpoint $endpoint)
+    public function onStart(AerysWebsocket\Endpoint $endpoint)
     {
         $this->endpoint = $endpoint;
     }
@@ -69,8 +69,9 @@ class PupperWebSocket implements Websocket
      *
      * @param int $clientId A unique (to the current process) identifier for this client
      * @param \Aerys\Websocket\Message $msg A stream of data received from the client
+     * @throws \RuntimeException
      */
-    public function onData(int $clientId, Websocket\Message $msg)
+    public function onData(int $clientId, AerysWebsocket\Message $msg)
     {
         // yielding $msg buffers the complete payload into a single string.
         // For very large payloads, you may want to stream those
@@ -135,9 +136,9 @@ class PupperWebSocket implements Websocket
     /**
      * @param string $eventName
      * @param callable $callback
-     * @return PupperWebSocket
+     * @return WebSocket
      */
-    public function addListener(string $eventName, callable $callback): PupperWebSocket
+    public function addEventListener(string $eventName, callable $callback): WebSocket
     {
         if (!array_key_exists($eventName, $this->listeners)) {
             $this->listeners[$eventName] = [];

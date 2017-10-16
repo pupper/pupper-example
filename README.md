@@ -1,3 +1,5 @@
+![d005d89e-ff25-4450-9119-aa56ff0d8949](https://user-images.githubusercontent.com/3274103/31629229-4859fe88-b2b3-11e7-85fb-66c35710f607.png)
+
 ![Software License][ico-license]
 
 **WORK IN PROGRESS**

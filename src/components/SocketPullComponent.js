@@ -1,7 +1,9 @@
 'use strict';
 
 import {Component} from 'react';
-import ReactEvent from './ReactEvent';
+import PropTypes from 'prop-types'
+
+import {ReactEvent} from '../PupperComponents';
 
 class SocketPullComponent extends Component {
     constructor() {
@@ -10,14 +12,15 @@ class SocketPullComponent extends Component {
     }
 
     componentWillMount() {
-        this.socket = this.props.socket;
+        this.socket = this.context.socket;
         this.socket.addEventListener('message', this.onMessage);
     }
 
     onMessage(e) {
         try {
+            const bindTo = this.props.bindTo || this.context.bindTo;
             const event = ReactEvent.parse(e.data);
-            if (event.getName() === this.props.listensTo) {
+            if (event.getName() === bindTo) {
                 this.onData(event.getValue());
             }
         } catch (e) {
@@ -27,12 +30,17 @@ class SocketPullComponent extends Component {
 
     componentWillUnmount() {
         this.socket.removeEventListener('message', this.onMessage);
-        this.socket = null;
     }
 
     render() {
         return null;
     }
 }
+
+SocketPullComponent.contextTypes = {
+    socket: PropTypes.object.isRequired,
+    bindTo: PropTypes.string,
+};
+SocketPullComponent.propTypes = {bindTo: PropTypes.string};
 
 export default SocketPullComponent;

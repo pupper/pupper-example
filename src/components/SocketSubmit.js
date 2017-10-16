@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-import {SocketComponent} from './PupperComponents'
-import ReactEvent from './ReactEvent';
+import {ReactEvent, SocketComponent} from '../PupperComponents'
+import PropTypes from 'prop-types'
 
 class SocketSubmit extends SocketComponent {
     constructor() {
@@ -12,9 +12,10 @@ class SocketSubmit extends SocketComponent {
     }
 
     onSubmit() {
-        this.socket.send(
+        const bindTo = this.props.bindTo || this.context.bindTo;
+        this.context.socket.send(
             new ReactEvent()
-                .setName(this.props.eventKey)
+                .setName(bindTo)
                 .setValue(this.props.toSubmit)
                 .build()
         );
@@ -24,5 +25,10 @@ class SocketSubmit extends SocketComponent {
         return <button onClick={this.onSubmit}>Submit</button>
     }
 }
+
+SocketSubmit.propTypes = {
+    bindTo: PropTypes.string,
+    toSubmit: PropTypes.string,
+};
 
 export default SocketSubmit;

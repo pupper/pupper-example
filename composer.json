@@ -8,7 +8,7 @@
     }
   ],
   "scripts": {
-    "dev": "aerys -d -c src/app.php"
+    "dev": "aerys -d -c app/app.php"
   },
   "require": {
     "roave/security-advisories": "dev-master",

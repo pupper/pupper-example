@@ -1,6 +1,6 @@
 'use strict';
 
-import SocketPullComponent from './SocketPullComponent';
+import {SocketPullComponent} from '../PupperComponents';
 
 class SocketLogger extends SocketPullComponent {
     onData(value) {

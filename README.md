@@ -23,7 +23,7 @@ The aim of the example app is to send text input from React, convert it into a M
 PHP is hooked to the same WebSocket as React. In this piece of code we're adding a listener for an event named 'hash'.
 
 ```php
-# app/events.php
+// app/events.php
 
 $websocket = new Pupper\Pupper\WebSocket;
 
@@ -37,9 +37,10 @@ $websocket->addEventListener('hash',
 
 In the callback we're fetching the data that was sent with `$event->getValue()`, converting it into a md5 hash, and sending it back by returning a new `ReactEvent`.
 ```php
-# app/events.php
+// app/events.php
+
 use Pupper\Pupper\ReactEvent;
-// ...
+
 return (new ReactEvent)
     ->setName('hash')
     ->setValue(md5($event->getValue()))
@@ -50,20 +51,18 @@ return (new ReactEvent)
 On the React side we're hooking onto the same WebSocket as PHP and creating a `SocketProvider` that will hydrate every child component with the socket.
 We're binding it to the 'hash' event by default.
 ```js
-# app/pages/HashPage.js
+// app/pages/HashPage.js
 const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 
-// ...
-
 <SocketProvider socket={globalSocket} bindTo='hash'>
-
     // ...
-
 </SocketProvider>
 ```
 
 You need to use the `withSocket` function to export your component for `SocketProvider` to hydrate it.
 ```js
+// app/pages/components/HashForm.js
+
 export default withSocket(HashForm)
 ```
 
@@ -73,12 +72,13 @@ To send text to the 'hash' event that will be caught by the PHP listener, we cre
 
 ```js
 // app/pages/components/HashForm.js
+
 class HashForm extends SocketSubmit
 
 // app/pages/HashPage.js
+
 <HashForm 
-    toSubmit={this.state.textToHash}
-    // ...
+    toSubmit={this.state.textToHash} ...
     >Add</HashForm>
 ```
 **Listening**
@@ -87,20 +87,18 @@ To display the hashed version of the text, that was sent by PHP, we create a `Ha
 
 ```js
 // app/pages/components/HashList.js
-class HashList extends SocketPullComponent {
-    onData(value) {
-        this.props.onData(value);
-    }
+
+class HashList extends SocketPullComponent
 
 // app/pages/HashPage.js
-onPhpData(val) {
-    const {hashList, lastTextHashedKey} = this.state;
-    hashList[lastTextHashedKey] = val;
-    this.setState({hashList, lastTextHashedKey: lastTextHashedKey + 1});
-}
-// ... (render)
-<HashList hashList={this.state.hashList} onData={this.onPhpData}/>
 
+<HashList ... onData={this.onPhpData}/>
+
+// app/pages/HashPage.js
+
+onPhpData(val) {
+    // update hash list
+}
 ```
 
 ## JS Components

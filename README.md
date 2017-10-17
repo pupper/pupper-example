@@ -10,6 +10,10 @@ It's inspired by the article [Game Development with React and PHP: How Compatibl
 
 ## The example app
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/3274103/31654109-3b836c0e-b325-11e7-9616-aae18d76b152.png" />
+</p>
+
 The aim of the example app is to send text input from React, convert it into a MD5 hash via PHP, and display it back in the React app.
 
 ### PHP side

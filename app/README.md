@@ -17,6 +17,7 @@ yarn front-watch
 yarn back-dev
 ```
 
+## How it works
 ### PHP side
 
 **Listening**

@@ -172,9 +172,7 @@ class LoginButton extends SocketDispatcher {
 
 ---
 
-Pupper provides some very basic components that were created for learning/debugging. 
-
-It's not clear whether they'll be supported or removed in the future, so try to use `SocketListener` and `SocketDispatcher` instead.
+*The following components were created for learning/debugging. It's not clear whether they'll be supported or removed in the future, so try to use `SocketListener` and `SocketDispatcher` instead.*
 
 ### SocketSubmit
 

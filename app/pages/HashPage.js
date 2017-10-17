@@ -36,6 +36,13 @@ class HashPage extends Component {
     render() {
         return <div>
 
+            <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css' rel='stylesheet'/>
+            <link href='../static/style.css' rel='stylesheet'/>
+
+            <div id='logo-container'>
+                <img src='../static/pupper.png'/>
+            </div>
+
             <SocketProvider socket={globalSocket} bindTo='hash'>
 
                 <HashForm

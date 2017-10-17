@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    font-family: 'Lato', serif;
+}
+
+body {
+    width: 360px;
+    margin: auto;
+}
+
+#logo-container {
+    text-align: center;
+}

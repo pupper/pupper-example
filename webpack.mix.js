@@ -13,6 +13,7 @@ let mix = require('laravel-mix');
 
 mix.setPublicPath('./');
 mix.react('app/app.js', 'dist/');
+mix.copy('app/static', 'dist/static');
 // .sass('src/app.scss', 'dist/')
 //  .setPublicPath('dist');
 
@@ -30,7 +31,6 @@ mix.react('app/app.js', 'dist/');
 // mix.browserSync('my-site.dev');
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
-// mix.copy(from, to);
 // mix.copyDirectory(fromDir, toDir);
 // mix.minify(file);
 // mix.sourceMaps(); // Enable sourcemaps

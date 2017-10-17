@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {SocketListener, withSocket} from '../../index';
+import {SocketListener, withSocket} from '@pupper/pupper-react';
 
 class HashList extends SocketListener {
     onData(value) {

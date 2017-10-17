@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import {SocketDispatcher, withSocket} from '../../index';
+import {SocketDispatcher, withSocket} from '@pupper/pupper-react';
 
 class HashForm extends SocketDispatcher {
     constructor() {

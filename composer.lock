@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f24019e4c0703b34248b3a8779a9831f",
+    "content-hash": "0660ebd5369b8c8b236636d04f60aece",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -170,16 +170,16 @@
         },
         {
             "name": "amphp/byte-stream",
-            "version": "v1.1.5",
+            "version": "v1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/byte-stream.git",
-                "reference": "d60ba033c41d3329419575f2fbb02230855c258e"
+                "reference": "f63b98990edc8c4e401fc8ba2834197acf2df8e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/d60ba033c41d3329419575f2fbb02230855c258e",
-                "reference": "d60ba033c41d3329419575f2fbb02230855c258e",
+                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/f63b98990edc8c4e401fc8ba2834197acf2df8e2",
+                "reference": "f63b98990edc8c4e401fc8ba2834197acf2df8e2",
                 "shasum": ""
             },
             "require": {
@@ -223,7 +223,7 @@
                 "non-blocking",
                 "stream"
             ],
-            "time": "2017-10-08T10:38:01+00:00"
+            "time": "2017-10-17T07:22:17+00:00"
         },
         {
             "name": "amphp/cache",
@@ -909,6 +909,43 @@
             "time": "2016-10-10T12:19:37+00:00"
         },
         {
+            "name": "pupper/pupper-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pupper/pupper-php.git",
+                "reference": "90c211b6654e8e4d2dd7924aa196f73b67b5c684"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pupper/pupper-php/zipball/90c211b6654e8e4d2dd7924aa196f73b67b5c684",
+                "reference": "90c211b6654e8e4d2dd7924aa196f73b67b5c684",
+                "shasum": ""
+            },
+            "require": {
+                "amphp/aerys": "^0.6.0",
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pupper\\Pupper\\": "src/Pupper"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "bouiboui",
+                    "email": "dev@cod3.net"
+                }
+            ],
+            "description": "PHP components for Pupper",
+            "time": "2017-10-17T15:38:19+00:00"
+        },
+        {
             "name": "roave/security-advisories",
             "version": "dev-master",
             "source": {
@@ -1099,7 +1136,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "pupper/pupper-php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

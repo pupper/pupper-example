@@ -1,9 +1,9 @@
 'use strict';
 
 import {Component} from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import {ReactEvent} from '../PupperComponents';
+import ReactEvent from './ReactEvent';
 
 class SocketListener extends Component {
     constructor() {

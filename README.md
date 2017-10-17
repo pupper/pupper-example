@@ -72,9 +72,9 @@ export default withSocket(HashForm)
 
 **Sending**
 
-To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `SocketSubmit`. 
+To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `SocketDispatcher`. 
 
-`SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to.
+`SocketDispatcher` is a component that sends whatever is in its `toSubmit` prop to the socket it's connected to.
 
 ```jsx harmony
 // app/pages/components/HashForm.js
@@ -169,36 +169,6 @@ class LoginButton extends SocketDispatcher {
 // Usage
 <LoginButton toSubmit={this.state.customerId} bindTo='customerHasLogged'/>
 ```
-
----
-
-*The following components were created for learning/debugging. It's not clear whether they'll be supported or removed in the future, so try to use `SocketListener` and `SocketDispatcher` instead.*
-
-### SocketSubmit
-
-`SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to when it's clicked.
-
-```jsx harmony
-<SocketSubmit toSubmit={this.state.valueToSend}/>
-```
-### SocketPrinter
-
-`SocketPrinter` prints the value associated with the event it is bounded to.
-
-```jsx harmony
-<SocketPrinter bindTo='eventToListenToAndPrint'/>
-```
-### SocketLogger
-
-`SocketLogger` `console.log`s the value associated with the event it is bounded to.
-
-```jsx harmony
-<SocketLogger bindTo='eventToListenToAndLogInTheConsole'/>
-```
-
----
-
-### ReactEvent
 
 ## Usage
 

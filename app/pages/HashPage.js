@@ -2,10 +2,10 @@
 
 import React, {Component} from 'react';
 
-import HashForm from './components/HashForm';
-import HashList from './components/HashList';
+import HashForm from '../components/HashForm';
+import HashList from '../components/HashList';
 
-import {SocketProvider} from '../../src/PupperComponents';
+import {SocketProvider} from '../../index';
 
 const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 

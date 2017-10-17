@@ -59,7 +59,7 @@ We bind it to the 'hash' event.
 const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 
 <SocketProvider socket={globalSocket} bindTo='hash'>
-    // ...
+    {/* Child components go here */}
 </SocketProvider>
 ```
 
@@ -141,21 +141,21 @@ export default withSocket(MyComponent)
 
 `SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to when it's clicked.
 
-```
+```jsx harmony
 <SocketSubmit toSubmit={this.state.valueToSend}/>
 ```
 ### SocketPrinter
 
 `SocketPrinter` prints the value associated with the event it is bounded to.
 
-```
+```jsx harmony
 <SocketPrinter bindTo='eventToListenToAndPrint'/>
 ```
 ### SocketLogger
 
 `SocketLogger` `console.log`s the value associated with the event it is bounded to.
 
-```
+```jsx harmony
 <SocketLogger bindTo='eventToListenToAndLogInTheConsole'/>
 ```
 

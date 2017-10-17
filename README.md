@@ -169,6 +169,33 @@ class LoginButton extends SocketDispatcher {
 // Usage
 <LoginButton toSubmit={this.state.customerId} bindTo='customerHasLogged'/>
 ```
+## PHP Components
+### WebSocket
+
+`WebSocket` is the class that will let you define listeners on the PHP side.
+
+The only method that you should learn about is `addListener`, which takes the event name as first parameter, and a callback function as a second parameter.
+
+```php
+use Pupper\Pupper\ReactEvent;
+
+$websocket = (new Pupper\Pupper\WebSocket)
+    ->addEventListener('custom', function (ReactEvent $event) {
+        return (new ReactEvent)
+            ->setName('custom')
+            ->setValue('From PHP: ' . $event->getValue())
+            ->build();
+    });
+
+$router = Aerys\router()
+    ->route('GET', '/ws', Aerys\websocket($websocket));
+
+return (new Aerys\Host)
+    ->use($router)
+    ->expose('*', 1337);
+
+
+```
 
 ## Usage
 

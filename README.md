@@ -193,10 +193,38 @@ $router = Aerys\router()
 return (new Aerys\Host)
     ->use($router)
     ->expose('*', 1337);
-
-
 ```
 
+### ReactEvent
+
+`ReactEvent` represents an event from the PHP side.
+
+
+**Read**
+
+`ReactEvent` has `getName()` and `getValue()` methods that you can use to read the event's name and value.
+
+```php
+use Pupper\Pupper\ReactEvent;
+
+function (ReactEvent $event) {
+    echo $event->getName();
+    echo $event->getValue();
+});
+```
+
+**Write**
+
+`ReactEvent` has a `build()` method that prepares events in the right format for `WebSocket` callbacks.
+
+```php
+use Pupper\Pupper\ReactEvent;
+
+$event = (new ReactEvent)
+    ->setName('custom')
+    ->setValue('From PHP: ' . $event->getValue())
+    ->build();
+```
 ## Usage
 
 This is a work in progress, but if you want to take a peek:

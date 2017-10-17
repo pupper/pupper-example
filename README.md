@@ -134,6 +134,41 @@ const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 ```jsx harmony
 export default withSocket(MyComponent)
 ```
+---
+
+### SocketListener
+
+`SocketListener` is the Component you want to extend whenever you want to **receive** updates for an event. 
+
+Overwrite its `onData` method to define what to do with the value.
+
+```jsx harmony
+class CustomerLogger extends SocketListener {
+    onData(value) {
+        console.log('Customer has logged', value);
+    }
+}
+
+// Usage
+<CustomerLogger bindTo='customerHasLogged'/>
+```
+
+### SocketDispatcher
+
+`SocketDispatcher` is the Component you want to extend whenever you want to **send** event updates. 
+
+Invoke its `onSubmit` method to send a new event with its `toSubmit` prop value.
+
+```jsx harmony
+class LoginButton extends SocketDispatcher {
+    render() {
+        return <button onClick={this.onSubmit}>Submit</button>
+    }
+}
+
+// Usage
+<LoginButton toSubmit={this.state.customerId} bindTo='customerHasLogged'/>
+```
 
 ---
 
@@ -158,30 +193,6 @@ export default withSocket(MyComponent)
 ```jsx harmony
 <SocketLogger bindTo='eventToListenToAndLogInTheConsole'/>
 ```
-
----
-
-### SocketListener
-
-`SocketListener` is the Component you want to extend whenever you want to receive updates for an event. 
-
-Overwrite its `onData` method to define what to do with the value.
-
-```jsx harmony
-class CustomerLogger extends SocketListener {
-    onData(value) {
-        console.log('Customer has logged', value);
-    }
-}
-
-// Usage
-
-<CustomerLogger bindTo='customerHasLogged'/>
-```
-
-### SocketDispatcher
-
-`SocketDispatcher`
 
 ---
 

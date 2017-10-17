@@ -1,7 +1,7 @@
 {
   "name": "pupper",
   "version": "1.0.0",
-  "description": "",
+  "description": "PHP + React",
   "main": "index.js",
   "scripts": {
     "back-dev": "composer dev",

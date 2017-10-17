@@ -1,6 +1,7 @@
 {
   "name": "bouiboui/pupper",
   "license": "Unlicense",
+  "description": "PHP + React",
   "authors": [
     {
       "name": "bouiboui",

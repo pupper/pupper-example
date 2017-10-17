@@ -135,7 +135,15 @@ const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 export default withSocket(MyComponent)
 ```
 
+---
+
 ### SocketSubmit
+
+`SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to when it's clicked.
+
+```
+<SocketSubmit toSubmit={this.state.valueToSend}/>
+```
 ### SocketPrinter
 ### SocketLogger
 

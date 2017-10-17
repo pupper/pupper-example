@@ -145,10 +145,26 @@ export default withSocket(MyComponent)
 <SocketSubmit toSubmit={this.state.valueToSend}/>
 ```
 ### SocketPrinter
+
+`SocketPrinter` prints the value associated with the event it is bounded to.
+
+```
+<SocketPrinter bindTo='eventToListenToAndPrint'/>
+```
 ### SocketLogger
+
+`SocketLogger` `console.log`s the value associated with the event it is bounded to.
+
+```
+<SocketLogger bindTo='eventToListenToAndLogInTheConsole'/>
+```
+
+---
 
 ### SocketComponent
 ### SocketPullComponent
+
+---
 
 ### ReactEvent
 

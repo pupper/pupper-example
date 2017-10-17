@@ -87,9 +87,9 @@ class HashForm extends SocketSubmit
 ```
 **Listening**
 
-To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `SockeListener`. 
+To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `SocketListener`. 
 
-`SockeListener` is a listener that triggers its children `onData(value)` with the data that was sent.
+`SocketListener` is a listener that triggers its children `onData(value)` with the data that was sent.
 
 ```jsx harmony
 // app/pages/components/HashList.js
@@ -161,8 +161,27 @@ export default withSocket(MyComponent)
 
 ---
 
+### SocketListener
+
+`SocketListener` is the Component you want to extend whenever you want to receive updates for an event. 
+
+Overwrite its `onData` method to define what to do with the value.
+
+```jsx harmony
+class CustomerLogger extends SocketListener {
+    onData(value) {
+        console.log('Customer has logged', value);
+    }
+}
+
+// Usage
+
+<CustomerLogger bindTo='customerHasLogged'/>
+```
+
 ### SocketDispatcher
-### SockeListener
+
+`SocketDispatcher`
 
 ---
 

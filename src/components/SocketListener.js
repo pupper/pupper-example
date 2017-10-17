@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import {ReactEvent} from '../PupperComponents';
 
-class SocketPullComponent extends Component {
+class SocketListener extends Component {
     constructor() {
         super();
         this.onMessage = this.onMessage.bind(this);
@@ -31,16 +31,14 @@ class SocketPullComponent extends Component {
     componentWillUnmount() {
         this.socket.removeEventListener('message', this.onMessage);
     }
-
-    render() {
-        return null;
-    }
 }
 
-SocketPullComponent.contextTypes = {
+SocketListener.propTypes = {
+    bindTo: PropTypes.string
+};
+SocketListener.contextTypes = {
     socket: PropTypes.object.isRequired,
     bindTo: PropTypes.string,
 };
-SocketPullComponent.propTypes = {bindTo: PropTypes.string};
 
-export default SocketPullComponent;
+export default SocketListener;

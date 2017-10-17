@@ -1,8 +1,8 @@
 'use strict';
 
-import {SocketPullComponent} from '../PupperComponents';
+import {SocketListener} from '../PupperComponents';
 
-class SocketLogger extends SocketPullComponent {
+class SocketLogger extends SocketListener {
     onData(value) {
         console.log(value);
     }

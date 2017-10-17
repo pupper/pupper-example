@@ -87,14 +87,14 @@ class HashForm extends SocketSubmit
 ```
 **Listening**
 
-To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `SocketPullComponent`. 
+To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `SockeListener`. 
 
-`SocketPullComponent` is a listener that triggers its children `onData(value)` with the data that was sent.
+`SockeListener` is a listener that triggers its children `onData(value)` with the data that was sent.
 
 ```jsx harmony
 // app/pages/components/HashList.js
 
-class HashList extends SocketPullComponent
+class HashList extends SocketListener
 
 // app/pages/HashPage.js
 
@@ -119,10 +119,10 @@ const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 
 <SocketProvider socket={globalSocket} bindTo='customEvent'>
     
-    // becomes <CustomComponent socket={globalSocket} bindTo='customEvent'/>
+    {/* becomes <CustomComponent socket={globalSocket} bindTo='customEvent'/> */}
     <CustomComponent/>
        
-    // becomes <OtherComponent socket={globalSocket} bindTo='otherEvent'/>
+    {/* becomes <OtherComponent socket={globalSocket} bindTo='otherEvent'/> */}
     <CustomComponent bindTo='otherEvent' />
     
 </SocketProvider>
@@ -161,8 +161,8 @@ export default withSocket(MyComponent)
 
 ---
 
-### SocketComponent
-### SocketPullComponent
+### SocketDispatcher
+### SockeListener
 
 ---
 

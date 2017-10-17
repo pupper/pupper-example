@@ -3,9 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {SocketPullComponent, withSocket} from '../../../src/PupperComponents';
+import {SocketListener, withSocket} from '../../../src/PupperComponents';
 
-class HashList extends SocketPullComponent {
+class HashList extends SocketListener {
     onData(value) {
         this.props.onData(value);
     }

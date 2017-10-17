@@ -3,9 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import {SocketSubmit, withSocket} from '../../../src/PupperComponents';
+import {SocketDispatcher, withSocket} from '../../../src/PupperComponents';
 
-class HashForm extends SocketSubmit {
+class HashForm extends SocketDispatcher {
     constructor() {
         super();
         this.onClick = this.onClick.bind(this);

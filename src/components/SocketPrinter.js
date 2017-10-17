@@ -1,8 +1,8 @@
 'use strict';
 
-import {SocketPullComponent} from '../PupperComponents';
+import {SocketListener} from '../PupperComponents';
 
-class SocketPrinter extends SocketPullComponent {
+class SocketPrinter extends SocketListener {
     constructor() {
         super();
         this.state = {value: null};

@@ -2,25 +2,10 @@
 
 import React from 'react';
 
-import {ReactEvent, SocketComponent} from '../PupperComponents'
+import {SocketDispatcher} from '../PupperComponents'
 import PropTypes from 'prop-types'
 
-class SocketSubmit extends SocketComponent {
-    constructor() {
-        super();
-        this.onSubmit = this.onSubmit.bind(this);
-    }
-
-    onSubmit() {
-        const bindTo = this.props.bindTo || this.context.bindTo;
-        this.context.socket.send(
-            new ReactEvent()
-                .setName(bindTo)
-                .setValue(this.props.toSubmit)
-                .build()
-        );
-    }
-
+class SocketSubmit extends SocketDispatcher {
     render() {
         return <button onClick={this.onSubmit}>Submit</button>
     }

@@ -55,6 +55,7 @@ On the React side we connect to the same WebSocket as PHP and create a `SocketPr
 We bind it to the 'hash' event.
 ```js
 // app/pages/HashPage.js
+
 const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 
 <SocketProvider socket={globalSocket} bindTo='hash'>

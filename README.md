@@ -20,7 +20,9 @@ The aim of the example app is to send text input from React, convert it into a M
 
 **Listening**
 
-PHP is hooked to the same WebSocket as React. In this piece of code we're adding a listener for an event named 'hash'.
+PHP is hooked to the same WebSocket as React. 
+
+In this piece of code we add a listener for an event named 'hash'.
 
 ```php
 // app/events.php
@@ -35,7 +37,7 @@ $websocket->addEventListener('hash',
 ```
 **Sending**
 
-In the callback we're fetching the data that was sent with `$event->getValue()`, converting it into a md5 hash, and sending it back by returning a new `ReactEvent`.
+In the callback, we fetch the event data with `$event->getValue()`, convert it into a md5 hash, and send it back by returning a new `ReactEvent`.
 ```php
 // app/events.php
 
@@ -48,8 +50,9 @@ return (new ReactEvent)
 ```
 
 ### React side
-On the React side we're hooking onto the same WebSocket as PHP and creating a `SocketProvider` that will hydrate every child component with the socket.
-We're binding it to the 'hash' event by default.
+On the React side we connect to the same WebSocket as PHP and create a `SocketProvider` that hydrates it to its children components.
+
+We bind it to the 'hash' event.
 ```js
 // app/pages/HashPage.js
 const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
@@ -59,7 +62,7 @@ const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 </SocketProvider>
 ```
 
-You need to use the `withSocket` function to export your component for `SocketProvider` to hydrate it.
+We export our children components with the `withSocket` function for `SocketProvider` to hydrate them.
 ```js
 // app/pages/components/HashForm.js
 
@@ -68,7 +71,9 @@ export default withSocket(HashForm)
 
 **Sending**
 
-To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `SocketSubmit`. `SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to.
+To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `SocketSubmit`. 
+
+`SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to.
 
 ```js
 // app/pages/components/HashForm.js
@@ -77,13 +82,13 @@ class HashForm extends SocketSubmit
 
 // app/pages/HashPage.js
 
-<HashForm 
-    toSubmit={this.state.textToHash} ...
-    >Add</HashForm>
+<HashForm toSubmit={this.state.textToHash}...>Add</HashForm>
 ```
 **Listening**
 
-To display the hashed version of the text, that was sent by PHP, we create a `HashList` component that extends `SocketPullComponent`. `SocketPullComponent` is a listener that triggers its children `onData(value)` method with the data that was sent.
+To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `SocketPullComponent`. 
+
+`SocketPullComponent` is a listener that triggers its children `onData(value)` with the data that was sent.
 
 ```js
 // app/pages/components/HashList.js
@@ -118,11 +123,11 @@ onPhpData(val) {
 
 This is a work in progress, but if you want to take a peek:
 ```bash
-// npm
+# npm
 npm run front-watch
 npm run back-dev
 
-// Yarn
+# yarn
 yarn front-watch
 yarn back-dev
 ```

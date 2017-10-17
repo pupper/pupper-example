@@ -172,6 +172,10 @@ class LoginButton extends SocketDispatcher {
 
 ---
 
+Pupper provides some very basic components that were created for learning/debugging. 
+
+It's not clear whether they'll be supported or removed in the future, so try to use `SocketListener` and `SocketDispatcher` instead.
+
 ### SocketSubmit
 
 `SocketSubmit` is basically a `<button>` that sends whatever is in its `toSubmit` prop to the socket it's connected to when it's clicked.

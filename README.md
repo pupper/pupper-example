@@ -50,7 +50,7 @@ return (new ReactEvent)
 ```
 
 ### React side
-On the React side we connect to the same WebSocket as PHP and create a `SocketProvider` that hydrates it to its children components.
+On the React side we connect to the same WebSocket as PHP and create a `SocketProvider` that hydrates it to its child components.
 
 We bind it to the 'hash' event.
 ```js
@@ -63,7 +63,7 @@ const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 </SocketProvider>
 ```
 
-We export our children components with the `withSocket` function for `SocketProvider` to hydrate them.
+We export our child components with the `withSocket` function for `SocketProvider` to hydrate them.
 ```js
 // app/pages/components/HashForm.js
 
@@ -109,7 +109,31 @@ onPhpData(val) {
 
 ## JS Components
 ### SocketProvider
+
+`SocketProvider` takes a WebSocket as a prop and hydrates it to its child components.
+
+It can automatically bind them by using the `bindTo` prop, that can be overwritten.
+
+```js
+const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
+
+<SocketProvider socket={globalSocket} bindTo='customEvent'>
+    
+    // becomes <CustomComponent socket={globalSocket} bindTo='customEvent'/>
+    <CustomComponent/>
+       
+    // becomes <OtherComponent socket={globalSocket} bindTo='otherEvent'/>
+    <CustomComponent bindTo='otherEvent' />
+    
+</SocketProvider>
+```
+
 ### withSocket
+
+`withSocket` ables a component to be provided by `SocketProvider`.
+```js
+export default withSocket(MyComponent)
+```
 
 ### SocketSubmit
 ### SocketPrinter

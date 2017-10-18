@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/3274103/31654109-3b836c0e-b325-11e7-9616-aae18d76b152.png" />
+  <img src="https://user-images.githubusercontent.com/3274103/31729170-90d2abd4-b42e-11e7-91b8-bdc7a105c2cc.png" />
 </p>
 
 The aim of this example app is to send text input from React, convert it into a MD5 hash via PHP, and display it back in the React app.

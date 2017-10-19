@@ -24,14 +24,14 @@ yarn back-dev
 
 PHP is hooked to the same WebSocket as React. 
 
-In this piece of code we add a listener for an event named 'hash'.
+In this piece of code we add a listener for an event named `text_sent`.
 
 ```php
 // app/events.php
 
 $websocket = new Pupper\Pupper\WebSocket;
 
-$websocket->addEventListener('hash', 
+$websocket->addEventListener('text_sent', 
    function (Event $event) {
       // ...
    }
@@ -39,11 +39,11 @@ $websocket->addEventListener('hash',
 ```
 **Sending**
 
-In the callback, we fetch the event data with `$event->getValue()`, convert it into a md5 hash, and send it back by returning a new `Event`.
+In the callback, we fetch the event data with `$event->getValue()`, convert it into a md5 hash, and send it back by returning a new `Event` named `hash_sent`.
 ```php
 // app/events.php
 
-return new Event('hash', md5($event->getValue()));
+return new Event('hash_sent', md5($event->getValue()));
 ```
 
 ### React side
@@ -68,7 +68,7 @@ export default withSocket(HashForm)
 
 **Sending**
 
-To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `EventDispatcher`. 
+To send a `text_sent` event that will be caught by the PHP listener, we create a component that extends `EventDispatcher`. 
 
 `EventDispatcher` is a component that sends whatever is in its `toSubmit` prop to the socket it's connected to.
 

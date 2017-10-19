@@ -43,9 +43,9 @@ class HashPage extends Component {
                 <img src='../static/pupper.png'/>
             </div>
 
-            <SocketProvider socket={globalSocket} bindTo='hash'>
+            <SocketProvider socket={globalSocket}>
 
-                <HashForm
+                <HashForm bindTo='text_sent'
                     toSubmit={this.state.textToHash}
                     textToHash={this.state.textToHash}
                     onTextChange={this.onTextChange}
@@ -53,7 +53,7 @@ class HashPage extends Component {
                     Add
                 </HashForm>
 
-                <HashList hashList={this.state.hashList} onData={this.onPhpData}/>
+                <HashList bindTo='hash_sent' hashList={this.state.hashList} onData={this.onPhpData}/>
 
             </SocketProvider>
 

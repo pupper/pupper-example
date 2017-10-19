@@ -32,20 +32,20 @@ In this piece of code we add a listener for an event named 'hash'.
 $websocket = new Pupper\Pupper\WebSocket;
 
 $websocket->addEventListener('hash', 
-   function (ReactEvent $event) {
+   function (Event $event) {
       // ...
    }
 );
 ```
 **Sending**
 
-In the callback, we fetch the event data with `$event->getValue()`, convert it into a md5 hash, and send it back by returning a new `ReactEvent`.
+In the callback, we fetch the event data with `$event->getValue()`, convert it into a md5 hash, and send it back by returning a new `Event`.
 ```php
 // app/events.php
 
-use Pupper\Pupper\ReactEvent;
+use Pupper\Pupper\Event;
 
-return (new ReactEvent)
+return (new Event)
     ->setName('hash')
     ->setValue(md5($event->getValue()))
     ->build();
@@ -74,14 +74,14 @@ export default withSocket(HashForm)
 
 **Sending**
 
-To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `SocketDispatcher`. 
+To send text to the 'hash' event that will be caught by the PHP listener, we create a component that extends `EventDispatcher`. 
 
-`SocketDispatcher` is a component that sends whatever is in its `toSubmit` prop to the socket it's connected to.
+`EventDispatcher` is a component that sends whatever is in its `toSubmit` prop to the socket it's connected to.
 
 ```jsx harmony
 // app/pages/components/HashForm.js
 
-class HashForm extends SocketSubmit
+class HashForm extends EventDispatcher
 
 // app/pages/HashPage.js
 
@@ -89,14 +89,14 @@ class HashForm extends SocketSubmit
 ```
 **Listening**
 
-To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `SocketListener`. 
+To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `EventListener`. 
 
-`SocketListener` is a listener that triggers its children `onData(value)` with the data that was sent.
+`EventListener` is a listener that triggers its children `onData(value)` with the data that was sent.
 
 ```jsx harmony
 // app/pages/components/HashList.js
 
-class HashList extends SocketListener
+class HashList extends EventListener
 
 // app/pages/HashPage.js
 

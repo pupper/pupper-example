@@ -3,9 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-import {SocketDispatcher, withSocket} from '@pupper/pupper-react';
+import {EventDispatcher, withSocket} from '@pupper/pupper-react';
 
-class HashForm extends SocketDispatcher {
+class HashForm extends EventDispatcher {
     constructor() {
         super();
         this.onClick = this.onClick.bind(this);

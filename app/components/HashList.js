@@ -3,9 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {SocketListener, withSocket} from '@pupper/pupper-react';
+import {EventListener, withSocket} from '@pupper/pupper-react';
 
-class HashList extends SocketListener {
+class HashList extends EventListener {
     onData(value) {
         this.props.onData(value);
     }

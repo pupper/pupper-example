@@ -49,13 +49,12 @@ return new Event('hash', md5($event->getValue()));
 ### React side
 On the React side we connect to the same WebSocket as PHP and create a `SocketProvider` that hydrates it to its child components.
 
-We bind it to the 'hash' event.
 ```jsx harmony
 // app/pages/HashPage.js
 
 const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
 
-<SocketProvider socket={globalSocket} bindTo='hash'>
+<SocketProvider socket={globalSocket}>
     {/* Child components go here */}
 </SocketProvider>
 ```
@@ -73,6 +72,8 @@ To send text to the 'hash' event that will be caught by the PHP listener, we cre
 
 `EventDispatcher` is a component that sends whatever is in its `toSubmit` prop to the socket it's connected to.
 
+We bind it to the the `text_sent` event.
+
 ```jsx harmony
 // app/pages/components/HashForm.js
 
@@ -80,13 +81,15 @@ class HashForm extends EventDispatcher
 
 // app/pages/HashPage.js
 
-<HashForm toSubmit={this.state.textToHash}...>Add</HashForm>
+<HashForm bindTo='text_sent' toSubmit={this.state.textToHash}...>Add</HashForm>
 ```
 **Listening**
 
 To display the hashed version of the text that was sent by PHP, we create a `HashList` component that extends `EventListener`. 
 
 `EventListener` is a listener that triggers its children `onData(value)` with the data that was sent.
+
+We bind it to the `hash_sent` event.
 
 ```jsx harmony
 // app/pages/components/HashList.js
@@ -95,11 +98,11 @@ class HashList extends EventListener
 
 // app/pages/HashPage.js
 
-<HashList ... onData={this.onPhpData}/>
+<HashList bindTo='hash_sent' ... onData={this.onPhpData}/>
 
 // app/pages/HashPage.js
 
-onPhpData(val) {
+onPhpData(hashedText) {
     // update hash list
 }
 ```

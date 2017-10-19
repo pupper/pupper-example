@@ -18,9 +18,9 @@ class HashPage extends Component {
         this.onPhpData = this.onPhpData.bind(this);
     }
 
-    onPhpData(val) {
+    onPhpData(hashedText) {
         const {hashList, lastTextHashedKey} = this.state;
-        hashList[lastTextHashedKey] = val;
+        hashList[lastTextHashedKey] = hashedText;
         this.setState({hashList, lastTextHashedKey: lastTextHashedKey + 1});
     }
 

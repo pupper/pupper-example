@@ -13,7 +13,7 @@
   "author": "bouiboui <dev@cod3.net>",
   "license": "Unlicense",
   "devDependencies": {
-    "@pupper/pupper-react": "^0.1.10",
+    "@pupper/pupper-react": "^0.2.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "laravel-mix": "^1.5.1"

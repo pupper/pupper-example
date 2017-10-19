@@ -43,12 +43,7 @@ In the callback, we fetch the event data with `$event->getValue()`, convert it i
 ```php
 // app/events.php
 
-use Pupper\Pupper\Event;
-
-return (new Event)
-    ->setName('hash')
-    ->setValue(md5($event->getValue()))
-    ->build();
+return new Event('hash', md5($event->getValue()));
 ```
 
 ### React side

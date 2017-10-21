@@ -17,5 +17,4 @@ $router = Aerys\router()
 
 return (new Aerys\Host)
     ->use($router)
-    ->use(Aerys\root(dirname(__DIR__) . '/dist'))
-    ->expose('*', 1337);
+    ->use(Aerys\root(dirname(__DIR__) . '/dist'));

@@ -7,7 +7,7 @@ import HashList from '../components/HashList';
 
 import {SocketProvider} from '@pupper/pupper-react';
 
-const globalSocket = new WebSocket('ws://127.0.0.1:1337/ws');
+const globalSocket = new WebSocket('ws://127.0.0.1/ws');
 
 class HashPage extends Component {
     constructor() {

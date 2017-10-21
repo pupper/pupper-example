@@ -1,6 +1,7 @@
 {
   "name": "pupper",
   "version": "1.0.0",
+  "repository": "https://github.com/pupper/pupper",
   "description": "PHP + React",
   "main": "index.js",
   "scripts": {
@@ -12,8 +13,8 @@
   "author": "bouiboui <dev@cod3.net>",
   "license": "Unlicense",
   "devDependencies": {
-    "@pupper/pupper-react": "^0.2.0",
-    "babel-preset-es2015": "^6.24.1",
+    "@pupper/pupper-react": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "laravel-mix": "^1.5.1"
   },

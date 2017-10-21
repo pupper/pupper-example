@@ -4,7 +4,7 @@ use Aerys\Request;
 use Aerys\Response;
 use function Aerys\websocket;
 
-$websocket = require __DIR__ . './events.php';
+$websocket = require __DIR__ . '/events.php';
 
 $router = Aerys\router()
     ->route('GET', '/', function (Request $request, Response $response) {

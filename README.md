@@ -2,7 +2,7 @@
 
 ![Software License][ico-license]
 
-Pupper stands for "PHP Plus React" (PPR > Pupper). 
+Pupper stands for **P**HP **P**lus **R**eact (PPR > Pupper). 
 
 The goal is to make a Framework that takes the best of both technologies and makes them communicate bi-directionnaly.
 

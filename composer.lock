@@ -910,16 +910,16 @@
         },
         {
             "name": "pupper/pupper-php",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pupper/pupper-php.git",
-                "reference": "a44d6924e29a24e4d0c3e6f5abf6349703a78f78"
+                "reference": "f269925e275533cd9ca98487636e6f993bb32067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pupper/pupper-php/zipball/a44d6924e29a24e4d0c3e6f5abf6349703a78f78",
-                "reference": "a44d6924e29a24e4d0c3e6f5abf6349703a78f78",
+                "url": "https://api.github.com/repos/pupper/pupper-php/zipball/f269925e275533cd9ca98487636e6f993bb32067",
+                "reference": "f269925e275533cd9ca98487636e6f993bb32067",
                 "shasum": ""
             },
             "require": {
@@ -943,7 +943,7 @@
                 }
             ],
             "description": "PHP components for Pupper",
-            "time": "2017-10-23T10:39:29+00:00"
+            "time": "2017-10-23T11:44:10+00:00"
         },
         {
             "name": "roave/security-advisories",

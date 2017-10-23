@@ -16,12 +16,16 @@ $socketRouter = Aerys\router()->route('GET', '/',
     websocket(require __DIR__ . '/events.php'));
 
 return [
+
+    // Web endpoint
     (new Aerys\Host)
         ->use($webRouter)
         ->use(Aerys\root(dirname(__DIR__) . '/dist'))
         ->expose('0.0.0.0', 80),
 
+    // Socket endpoint
     (new Aerys\Host)
         ->use($socketRouter)
         ->expose('0.0.0.0', 1337)
+
 ];

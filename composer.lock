@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "34aa99a51ea4ddd74b380ac5483d4d68",
+    "content-hash": "739f5cd1933cc4b39d811667bacc665e",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -910,16 +910,16 @@
         },
         {
             "name": "pupper/pupper-php",
-            "version": "0.2.3",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pupper/pupper-php.git",
-                "reference": "5f9e47d8d846c85b1b0458d7241598f1663a7f55"
+                "reference": "51c3d82ab67dd2f0532ed53451f0c872f43b12a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pupper/pupper-php/zipball/5f9e47d8d846c85b1b0458d7241598f1663a7f55",
-                "reference": "5f9e47d8d846c85b1b0458d7241598f1663a7f55",
+                "url": "https://api.github.com/repos/pupper/pupper-php/zipball/51c3d82ab67dd2f0532ed53451f0c872f43b12a2",
+                "reference": "51c3d82ab67dd2f0532ed53451f0c872f43b12a2",
                 "shasum": ""
             },
             "require": {
@@ -943,7 +943,7 @@
                 }
             ],
             "description": "PHP components for Pupper",
-            "time": "2017-10-21T21:50:29+00:00"
+            "time": "2017-10-23T10:18:16+00:00"
         },
         {
             "name": "roave/security-advisories",

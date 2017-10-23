@@ -4,6 +4,10 @@
 
 The aim of this example app is to send text input from React, convert it into a MD5 hash via PHP, and display it back in the React app.
 
+<p align="center">
+  <a href="http://pupper.cod3.net">Try the online demo</a>
+</p>
+
 
 ## Usage
 

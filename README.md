@@ -34,7 +34,7 @@ Pupper PHP | Pupper React
 
 ## Credits
 
-Pupper was inspired by the article [Game Development with React and PHP: How Compatible Are They?](https://www.sitepoint.com/game-development-with-reactjs-and-php-how-compatible-are-they/?mkt_tok=eyJpIjoiTUdZek9URTFNR1JrTVRCaCIsInQiOiJxbnB6Z0JVNDBtdFRvSWFMMStkcmhuWGIrMkdDWlhwS1VSMGFGN1hwb0pxTUxcL1VBc015UmxEQ3J3VDBSSkFRNjh2ejVTdEluXC9QcEppT0VXQ3kybkxaMTZJSnExT1BJRjB3TFwvaTEyOWNCQkd4ZlZtcVlEK0hKSlFxKzE1WEhPTCJ9) by Christopher Pitt.
+Pupper was inspired by the article [Game Development with React and PHP: How Compatible Are They?](https://www.sitepoint.com/game-development-with-reactjs-and-php-how-compatible-are-they/) by Christopher Pitt.
 
 - [bouiboui][link-author]
 - [All Contributors][link-contributors]

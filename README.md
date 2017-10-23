@@ -18,13 +18,13 @@ It's inspired by the article [Game Development with React and PHP: How Compatibl
 
 This is a work in progress, but if you want to take a peek:
 ```bash
-# npm
-npm run front-watch
-npm run back-dev
+# setup
+composer install -o --no-dev
+npm i
 
-# yarn
-yarn front-watch
-yarn back-dev
+# run
+npm run build
+npm start
 ```
 
 ## Components

@@ -12,13 +12,13 @@ The aim of this example app is to send text input from React, convert it into a 
 ## Usage
 
 ```bash
-# npm
-npm run front-watch
-npm run back-dev
+# setup
+composer install -o --no-dev
+npm i
 
-# yarn
-yarn front-watch
-yarn back-dev
+# run
+npm run build
+npm start
 ```
 
 ## How it works

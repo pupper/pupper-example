@@ -16,7 +16,6 @@ It's inspired by the article [Game Development with React and PHP: How Compatibl
 
 ## Usage
 
-This is a work in progress, but if you want to take a peek:
 ```bash
 # setup
 composer install -o --no-dev

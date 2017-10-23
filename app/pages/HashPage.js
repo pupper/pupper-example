@@ -7,7 +7,7 @@ import HashList from '../components/HashList';
 
 import {SocketProvider} from '@pupper/pupper-react';
 
-const globalSocket = new WebSocket('ws://127.0.0.1/ws');
+const globalSocket = new WebSocket('ws://' + window.location.host + ':1337');
 
 class HashPage extends Component {
     constructor() {
@@ -46,10 +46,10 @@ class HashPage extends Component {
             <SocketProvider socket={globalSocket}>
 
                 <HashForm bindTo='text_sent'
-                    toSubmit={this.state.textToHash}
-                    textToHash={this.state.textToHash}
-                    onTextChange={this.onTextChange}
-                    onSubmit={this.onAddTextToHash}>
+                          toSubmit={this.state.textToHash}
+                          textToHash={this.state.textToHash}
+                          onTextChange={this.onTextChange}
+                          onSubmit={this.onAddTextToHash}>
                     Add
                 </HashForm>
 

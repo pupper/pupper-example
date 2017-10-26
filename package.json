@@ -14,16 +14,15 @@
   "license": "Unlicense",
   "devDependencies": {
     "@pupper/pupper-react": "^0.2.2",
+    "cross-env": "^5.1.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "laravel-mix": "^1.5.1"
   },
   "dependencies": {
-    "cross-env": "^5.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2",
-    "reactstrap": "^5.0.0-alpha.3"
+    "react-router-dom": "^4.2.2"
   }
 }

@@ -14,6 +14,8 @@ The goal is to make a Framework that takes the best of both technologies and mak
 
 ## Usage
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger)
+
 ```bash
 # setup
 composer install -o --no-dev

@@ -20,4 +20,4 @@ HashList.propTypes = {
     hashList: PropTypes.array.isRequired,
 };
 
-export default withSocket(HashList)
+export default withSocket(HashList);

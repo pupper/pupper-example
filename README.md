@@ -1,6 +1,10 @@
 ![d005d89e-ff25-4450-9119-aa56ff0d8949](https://user-images.githubusercontent.com/3274103/31629229-4859fe88-b2b3-11e7-85fb-66c35710f607.png)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger) ![Software License][ico-license] [![NSP Status](https://nodesecurity.io/orgs/pupper/projects/61df57e4-e4a9-46b3-8136-8e1d617f8603/badge)](https://nodesecurity.io/orgs/pupper/projects/61df57e4-e4a9-46b3-8136-8e1d617f8603) [![bitHound Overall Score](https://www.bithound.io/github/pupper/pupper-example/badges/score.svg)](https://www.bithound.io/github/pupper/pupper-example)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger) 
+![Software License][ico-license] 
+[![NSP Status](https://nodesecurity.io/orgs/pupper/projects/61df57e4-e4a9-46b3-8136-8e1d617f8603/badge)](https://nodesecurity.io/orgs/pupper/projects/61df57e4-e4a9-46b3-8136-8e1d617f8603) 
+[![bitHound Overall Score](https://www.bithound.io/github/pupper/pupper-example/badges/score.svg)](https://www.bithound.io/github/pupper/pupper-example) 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/136cb9c3-6ae2-4d4a-b134-3ecc26602acd/mini.png)](https://insight.sensiolabs.com/projects/136cb9c3-6ae2-4d4a-b134-3ecc26602acd)
 
 Pupper stands for **P**HP **P**lus **R**eact (PPR > Pupper). 
 

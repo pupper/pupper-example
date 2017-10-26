@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import {EventDispatcher, withSocket} from '@pupper/pupper-react';
 
@@ -30,7 +30,7 @@ class HashForm extends EventDispatcher {
                    value={this.props.textToHash}
                    type='text'/>
             <button onClick={this.onClick}>Hash with PHP</button>
-        </form>
+        </form>;
     }
 }
 
@@ -40,4 +40,4 @@ HashForm.propTypes = {
     textToHash: PropTypes.string.isRequired,
 };
 
-export default withSocket(HashForm)
+export default withSocket(HashForm);

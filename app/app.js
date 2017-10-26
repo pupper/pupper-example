@@ -1,8 +1,8 @@
 'use strict';
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {HashRouter, Route} from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {HashRouter, Route} from 'react-router-dom';
 
 import HashPage from './pages/HashPage';
 

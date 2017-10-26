@@ -30,7 +30,7 @@ class HashPage extends Component {
     }
 
     onTextChange(textToHash) {
-        this.setState({textToHash})
+        this.setState({textToHash});
     }
 
     render() {
@@ -57,8 +57,8 @@ class HashPage extends Component {
 
             </SocketProvider>
 
-        </div>
+        </div>;
     }
 }
 
-export default HashPage
+export default HashPage;

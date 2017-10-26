@@ -1,6 +1,6 @@
 ![d005d89e-ff25-4450-9119-aa56ff0d8949](https://user-images.githubusercontent.com/3274103/31629229-4859fe88-b2b3-11e7-85fb-66c35710f607.png)
 
-![Software License][ico-license]
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger) ![Software License][ico-license]
 
 Pupper stands for **P**HP **P**lus **R**eact (PPR > Pupper). 
 
@@ -13,8 +13,6 @@ The goal is to make a Framework that takes the best of both technologies and mak
 </p>
 
 ## Usage
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger)
 
 ```bash
 # setup

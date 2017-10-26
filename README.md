@@ -1,6 +1,6 @@
 ![d005d89e-ff25-4450-9119-aa56ff0d8949](https://user-images.githubusercontent.com/3274103/31629229-4859fe88-b2b3-11e7-85fb-66c35710f607.png)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger) ![Software License][ico-license]
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger) ![Software License][ico-license] [![NSP Status](https://nodesecurity.io/orgs/pupper/projects/61df57e4-e4a9-46b3-8136-8e1d617f8603/badge)](https://nodesecurity.io/orgs/pupper/projects/61df57e4-e4a9-46b3-8136-8e1d617f8603)
 
 Pupper stands for **P**HP **P**lus **R**eact (PPR > Pupper). 
 

@@ -1,16 +1,13 @@
-'use strict';
-
+import {HashRouter, Route} from 'react-router-dom';
+import HashPage from './pages/HashPage';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route} from 'react-router-dom';
-
-import HashPage from './pages/HashPage';
 
 const App = () => <HashRouter>
-    <Route exact path='/' component={HashPage}/>
+    <Route component={HashPage} exact path="/" />
 </HashRouter>;
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.querySelector('#app')
 );

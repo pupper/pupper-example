@@ -1,5 +1,3 @@
-'use strict';
-
 import React, {Component} from 'react';
 
 import HashForm from '../components/HashForm';
@@ -10,50 +8,59 @@ import {SocketProvider} from '@pupper/pupper-react';
 const globalSocket = new WebSocket('ws://' + window.location.host + ':1337');
 
 class HashPage extends Component {
-    constructor() {
+
+    constructor () {
         super();
-        this.state = {textToHash: '', hashList: [], lastTextHashedKey: 0};
+        this.state = {
+            hashList: [],
+            lastTextHashedKey: 0,
+            textToHash: ''
+        };
         this.onAddTextToHash = this.onAddTextToHash.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
         this.onPhpData = this.onPhpData.bind(this);
     }
 
-    onPhpData(hashedText) {
+    onPhpData (hashedText) {
         const {hashList, lastTextHashedKey} = this.state;
         hashList[lastTextHashedKey] = hashedText;
-        this.setState({hashList, lastTextHashedKey: lastTextHashedKey + 1});
+        this.setState({
+            hashList,
+            lastTextHashedKey: lastTextHashedKey + 1
+        });
     }
 
-    onAddTextToHash() {
+    onAddTextToHash () {
         const {hashList, textToHash} = this.state;
         hashList.push(textToHash);
     }
 
-    onTextChange(textToHash) {
+    onTextChange (textToHash) {
         this.setState({textToHash});
     }
 
-    render() {
+    render () {
+
         return <div>
 
-            <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css' rel='stylesheet'/>
-            <link href='../style.css' rel='stylesheet'/>
+            <link href="../normalize.min.css" rel="stylesheet" />
+            <link href="../style.css" rel="stylesheet" />
 
-            <div id='logo-container'>
-                <img src='../pupper.png'/>
+            <div id="logo-container">
+                <img src="../pupper.png" />
             </div>
 
             <SocketProvider socket={globalSocket}>
 
-                <HashForm bindTo='text_sent'
-                          toSubmit={this.state.textToHash}
-                          textToHash={this.state.textToHash}
-                          onTextChange={this.onTextChange}
-                          onSubmit={this.onAddTextToHash}>
-                    Add
-                </HashForm>
+                <HashForm
+                    bindTo="text_sent"
+                    handleSubmit={this.onAddTextToHash}
+                    handleTextChange={this.onTextChange}
+                    textToHash={this.state.textToHash}
+                    toSubmit={this.state.textToHash}
+                >Add</HashForm>
 
-                <HashList bindTo='hash_sent' hashList={this.state.hashList} onData={this.onPhpData}/>
+                <HashList bindTo="hash_sent" handleData={this.onPhpData} hashList={this.state.hashList} />
 
             </SocketProvider>
 

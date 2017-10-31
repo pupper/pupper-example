@@ -34,7 +34,7 @@ class HashForm extends EventDispatcher {
                 type="text"
                 value={this.props.textToHash}
             />
-            <button onClick={this.handleClick}>{'Hash with PHP'}</button>
+            <button onClick={this.handleClick}>Hash with PHP</button>
         </form>;
     }
 }

@@ -1,43 +1,48 @@
-'use strict';
-
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import {EventDispatcher, withSocket} from '@pupper/pupper-react';
 
+import PropTypes from 'prop-types';
+import React from 'react';
+
 class HashForm extends EventDispatcher {
-    constructor() {
+    constructor () {
         super();
-        this.onClick = this.onClick.bind(this);
-        this.onTextChange = this.onTextChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleTextChange = this.handleTextChange.bind(this);
+        this.setRef = this.setRef.bind(this);
     }
 
-    onClick(e) {
-        e.preventDefault();
+    handleClick (event) {
+        event.preventDefault();
         this.onSubmit();
-        this.props.onSubmit();
+        this.props.handleSubmit();
         this.textInput.focus();
     }
 
-    onTextChange(e) {
-        this.props.onTextChange(e.target.value);
+    handleTextChange (event) {
+        this.props.handleTextChange(event.target.value);
     }
 
-    render() {
-        return <form onSubmit={this.onClick}>
-            <input ref={input => this.textInput = input}
-                   onChange={this.onTextChange}
-                   value={this.props.textToHash}
-                   type='text'/>
-            <button onClick={this.onClick}>Hash with PHP</button>
+    setRef (input) {
+        this.textInput = input;
+    }
+
+    render () {
+        return <form onSubmit={this.handleClick}>
+            <input
+                onChange={this.handleTextChange}
+                ref={this.setRef}
+                type="text"
+                value={this.props.textToHash}
+            />
+            <button onClick={this.handleClick}>{'Hash with PHP'}</button>
         </form>;
     }
 }
 
 HashForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    onTextChange: PropTypes.func.isRequired,
-    textToHash: PropTypes.string.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    handleTextChange: PropTypes.func.isRequired,
+    textToHash: PropTypes.string.isRequired
 };
 
 export default withSocket(HashForm);

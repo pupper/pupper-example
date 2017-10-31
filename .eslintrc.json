@@ -33,6 +33,7 @@
     "react/jsx-max-props-per-line": "off",
     "react/jsx-no-literals": "off",
     "react/no-set-state": "off",
+    "react/no-array-index-key": "off",
     "react/require-optimization": "off",
     "quote-props": "off",
     "padded-blocks": "off",

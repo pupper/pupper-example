@@ -28,6 +28,7 @@
       "error",
       "single"
     ],
+    "arrow-parens": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-closing-tag-location": "off",
     "react/jsx-max-props-per-line": "off",

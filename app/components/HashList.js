@@ -9,7 +9,12 @@ class HashList extends EventListener {
     }
 
     render () {
-        return <ul>{this.props.hashList.map((hash, key) => <li key={key}>{hash}</li>)}</ul>;
+        return <ul>
+            {this.props.hashList.map((hash, key) =>
+                <li key={key}>
+                    {hash}
+                </li>)}
+        </ul>;
     }
 }
 

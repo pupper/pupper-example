@@ -22,7 +22,8 @@ class HashPage extends Component {
     }
 
     onPhpData (hashedText) {
-        this.setState(({hashList, lastTextHashedKey}) => {
+        const {lastTextHashedKey} = this.state;
+        this.setState(({hashList}) => {
             hashList[lastTextHashedKey] = hashedText;
             return {
                 hashList,
@@ -61,7 +62,9 @@ class HashPage extends Component {
                     handleTextChange={this.onTextChange}
                     textToHash={textToHash}
                     toSubmit={textToHash}
-                >Add</HashForm>
+                >
+Add
+                </HashForm>
 
                 <HashList bindTo="hash_sent" handleData={this.onPhpData} hashList={hashList} />
 

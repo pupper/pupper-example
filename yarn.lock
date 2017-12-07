@@ -6,7 +6,7 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@comandeer/babel-plugin-banner/-/babel-plugin-banner-1.0.0.tgz#40bcce0bbee084b5b02545a33635d053c248356f"
 
-"@pupper/pupper-react@^0.2.2":
+"@pupper/pupper-react@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@pupper/pupper-react/-/pupper-react-0.2.3.tgz#517d25a2dead3fc861ed9a907b421fbad9010176"
   dependencies:

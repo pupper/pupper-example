@@ -885,6 +885,12 @@ babel-plugin-transform-remove-undefined@^0.2.0:
   dependencies:
     babel-helper-evaluate-path "^0.2.0"
 
+babel-plugin-transform-runtime@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-simplify-comparison-operators@^6.8.5:
   version "6.8.5"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-simplify-comparison-operators/-/babel-plugin-transform-simplify-comparison-operators-6.8.5.tgz#a838786baf40cc33a93b95ae09e05591227e43bf"
@@ -3983,14 +3989,15 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
-laravel-mix@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-1.6.2.tgz#d7df2f63ad0008e07414728e7acc204be3d7e27d"
+laravel-mix@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-1.7.0.tgz#3a3e996a07eb50a97479d418421cc484fb3d8b4d"
   dependencies:
     autoprefixer "^7.1.1"
     babel-core "^6.24.1"
     babel-loader "^7.1.1"
     babel-plugin-transform-object-rest-spread "^6.26.0"
+    babel-plugin-transform-runtime "^6.23.0"
     babel-preset-env "^1.5.1"
     chokidar "^1.7.0"
     clean-css "^4.1.3"

@@ -20,7 +20,7 @@
     "cross-env": "^5.1.1",
     "eslint": "^4.16.0",
     "eslint-plugin-react": "^7.5.1",
-    "laravel-mix": "^1.7.2"
+    "laravel-mix": "^2.0.0"
   },
   "dependencies": {
     "prop-types": "^15.6.0",

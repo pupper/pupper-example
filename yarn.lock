@@ -4364,9 +4364,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-laravel-mix@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-2.1.8.tgz#2b7f13325fb9cfb922b2a61e2b54042e91d18cdd"
+laravel-mix@^2.1.9:
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-2.1.9.tgz#994082be21e9cbf77c555bbaf4fa97b432047f3a"
   dependencies:
     autoprefixer "^7.2.6"
     babel-core "^6.24.1"

@@ -15,7 +15,7 @@
   "license": "Unlicense",
   "devDependencies": {
     "@pupper/pupper-react": "^0.2.5",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",

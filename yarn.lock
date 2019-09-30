@@ -6294,21 +6294,21 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
 
-react-router-dom@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.1.0.tgz#48ad018d71fb7835212587e4c90bd2e3d2417e31"
+react-router-dom@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.1.1.tgz#53caa089c291f64c1d597a52827b978b54d7c25d"
   dependencies:
     "@babel/runtime" "^7.1.2"
     history "^4.9.0"
     loose-envify "^1.3.1"
     prop-types "^15.6.2"
-    react-router "5.1.0"
+    react-router "5.1.1"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-router@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.1.0.tgz#739d0f3a57476363374e20d6e33e97f5ce2e00a3"
+react-router@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.1.1.tgz#9d65f54795f938c0c5b69eaeef58728134ce7c7c"
   dependencies:
     "@babel/runtime" "^7.1.2"
     history "^4.9.0"

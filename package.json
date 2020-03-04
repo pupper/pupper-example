@@ -17,7 +17,7 @@
     "@pupper/pupper-react": "^0.2.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "cross-env": "^6.0.2",
+    "cross-env": "^7.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.15.1",
     "laravel-mix": "^2.1.11"

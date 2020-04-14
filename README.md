@@ -1,4 +1,5 @@
 ![d005d89e-ff25-4450-9119-aa56ff0d8949](https://user-images.githubusercontent.com/3274103/31629229-4859fe88-b2b3-11e7-85fb-66c35710f607.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpupper%2Fpupper-example.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpupper%2Fpupper-example?ref=badge_shield)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a4ba6aa728464befb3c41aa2a680dc45)](https://www.codacy.com/app/bouiboui/pupper-example?utm_source=github.com&utm_medium=referral&utm_content=pupper/pupper-example&utm_campaign=badger) 
 ![Software License][ico-license] 
@@ -49,3 +50,6 @@ Unlicense. Please see [License File](LICENSE.md) for more information.
 
 [link-author]: https://github.com/bouiboui
 [link-contributors]: ../../contributors
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpupper%2Fpupper-example.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpupper%2Fpupper-example?ref=badge_large)

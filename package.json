@@ -19,7 +19,7 @@
     "babel-preset-react": "^6.24.1",
     "cross-env": "^6.0.2",
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.15.1",
+    "eslint-plugin-react": "^7.20.3",
     "laravel-mix": "^2.1.11"
   },
   "dependencies": {
